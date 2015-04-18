@@ -1,19 +1,19 @@
 /*
                  
-                ------------------------------------------
-                | LUDUM DARE 32 - Unconventional Weapons |
-                ------------------------------------------ 
+                                  ------------------------------------------
+                                  | LUDUM DARE 32 - Unconventional Weapons |
+                                  ------------------------------------------ 
                  
-        ~My first pebble app and first solo programming adventure~
+                          ~My first pebble app and first solo programming adventure~
                       
                       
-                      -Bowsewr   04/18/2015
+                                          -Bowsewr   04/18/2015
 
 
           **Special Thanks to those who helped me in stream and joined me in this learning process**
                   --DemonicEgg
                   --Willx71
-                  --
+                  --Pythe314
                   --
                   --
 */
@@ -49,13 +49,13 @@ static uint16_t menu_get_num_rows_callback(MenuLayer *menu_layer, uint16_t secti
 
 // Special Props to DemonicEgg for solving the uint16 vs int16 riddle. thanks!  //
 static int16_t menu_get_header_height_callback(MenuLayer *menu_layer, uint16_t section_index, void *data) {
-  return MENU_CELL_BASIC_HEADER_HEIGHT;
+  return 16;
 }
 
 static void menu_draw_header_callback(GContext* ctx, const Layer *cell_layer, uint16_t section_index, void *data) {
   switch (section_index) {
     case 0:
-      menu_cell_basic_header_draw(ctx, cell_layer, "It's Unconventional...");
+      menu_cell_basic_header_draw(ctx, cell_layer, "  It's Unconventional...");
       break;
 
 //    case 1: 
