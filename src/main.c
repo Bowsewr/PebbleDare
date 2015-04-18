@@ -1,8 +1,9 @@
 #include <pebble.h>
 
 #define NUM_MENU_SECTIONS 2
-#define NUM_FIRST_MENU_ITMES 3
+#define NUM_FIRST_MENU_ITEMS 3
 #define NUM_SECOND_MENU_ITEMS 3
+#define NUM_MENU_ICONS 6
   
 static Window *main_window;
 static MenuLayer *my_menu_layer;
@@ -77,7 +78,7 @@ static void menu_select_callback(MenuLayer *menu_layer, MenuIndex *cell_index, v
 
 static void main_window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
-  GRect bounds = layer_get_bounds_frame(window_layer)
+  GRect bounds = layer_get_frame(window_layer);
     
   my_menu_layer = menu_layer_create(bounds);
   menu_layer_set_callbacks(my_menu_layer, NULL, (MenuLayerCallbacks) {
