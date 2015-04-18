@@ -1,8 +1,29 @@
+/*
+                 
+                ------------------------------------------
+                | LUDUM DARE 32 - Unconventional Weapons |
+                ------------------------------------------ 
+                 
+        ~My first pebble app and first solo programming adventure~
+                      
+                      
+                      -Bowsewr   04/18/2015
+
+
+          **Special Thanks to those who helped me in stream and joined me in this learning process**
+                  --DemonicEgg
+                  --Willx71
+                  --
+                  --
+                  --
+*/
+
+
 #include <pebble.h>
 
-#define NUM_MENU_SECTIONS 2
-#define NUM_FIRST_MENU_ITEMS 3
-#define NUM_SECOND_MENU_ITEMS 3
+#define NUM_MENU_SECTIONS 1
+#define NUM_FIRST_MENU_ITEMS 6
+#define NUM_SECOND_MENU_ITEMS 0
 #define NUM_MENU_ICONS 6
   
 static Window *main_window;
@@ -25,18 +46,21 @@ static uint16_t menu_get_num_rows_callback(MenuLayer *menu_layer, uint16_t secti
   }
 }
 
-static uint16_t menu_get_header_height_callback(MenuLayer *menu_layer, uint16_t section_index, void *data) {
+
+// Special Props to DemonicEgg for solving the uint16 vs int16 riddle. thanks!  //
+static int16_t menu_get_header_height_callback(MenuLayer *menu_layer, uint16_t section_index, void *data) {
   return MENU_CELL_BASIC_HEADER_HEIGHT;
 }
 
 static void menu_draw_header_callback(GContext* ctx, const Layer *cell_layer, uint16_t section_index, void *data) {
   switch (section_index) {
     case 0:
-      menu_cell_basic_header_draw(ctx, cell_layer, "Header 1");
+      menu_cell_basic_header_draw(ctx, cell_layer, "It's Unconventional...");
       break;
-    case 1: 
-      menu_cell_basic_header_draw(ctx, cell_layer, "Header 2");
-      break;
+
+//    case 1: 
+//      menu_cell_basic_header_draw(ctx, cell_layer, "Header 2");
+//      break;
   }
 }
 
